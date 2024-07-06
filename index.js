@@ -19,9 +19,9 @@ app.get('/high-temperatures', (req, res) => {
 //2
 let prices = [80, 120, 95, 150, 60, 110];
 function filteLowPrice(ele) {
-  return ele > 100;
+  return ele <= 100;
 }
-app.get('low-prices', (req, res) => {
+app.get('/low-prices', (req, res) => {
   let result = prices.filter(ele => filteLowPrice(ele));
   res.json(result);
 });
